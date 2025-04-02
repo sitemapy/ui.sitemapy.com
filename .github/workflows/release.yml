@@ -11,6 +11,7 @@ jobs:
     permissions:
       contents: write
       packages: write
+      issues: write
       pull-requests: write
     steps:
       - name: Checkout
@@ -49,6 +50,13 @@ jobs:
         uses: cycjimmy/semantic-release-action@v4
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          dry_run: false
+          extra_plugins: |
+            @semantic-release/commit-analyzer
+            @semantic-release/release-notes-generator
+            @semantic-release/github
+            @semantic-release/git
 
       - name: Do something when a new release published
         if: steps.semantic.outputs.new_release_published == 'true'

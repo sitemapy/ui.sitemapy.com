@@ -1,8 +1,9 @@
 {
   "name": "@sitemapy/ui",
   "private": false,
-  "version": "0.1.0",
+  "version": "0.0.0-development",
   "license": "MIT",
+  "author": "Kevin Marques",
   "repository": {
     "type": "git",
     "url": "https://github.com/sitemapy/ui.sitemapy.com.git"
@@ -21,6 +22,10 @@
       "require": "./dist/ui.umd.cjs"
     },
     "./style.css": "./dist/ui.css"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
   },
   "scripts": {
     "dev": "vite",

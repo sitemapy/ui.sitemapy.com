@@ -2,22 +2,29 @@
   "name": "@sitemapy/ui",
   "private": false,
   "version": "0.1.0",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sitemapy/ui.sitemapy.com.git"
+  },
   "type": "module",
-  "main": "./dist/index.js",
-  "module": "./dist/index.js",
+  "main": "./dist/ui.umd.cjs",
+  "module": "./dist/ui.js",
   "types": "./dist/index.d.ts",
   "files": [
     "dist"
   ],
   "exports": {
     ".": {
-      "import": "./dist/index.js",
-      "types": "./dist/index.d.ts"
-    }
+      "types": "./dist/index.d.ts",
+      "import": "./dist/ui.js",
+      "require": "./dist/ui.umd.cjs"
+    },
+    "./style.css": "./dist/ui.css"
   },
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "tsc && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
@@ -27,7 +34,8 @@
     "@tailwindcss/vite": "^4.1.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "tailwindcss": "^4.1.1"
+    "tailwindcss": "^4.1.1",
+    "vite-plugin-dts": "^4.5.3"
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^3",

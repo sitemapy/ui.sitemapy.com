@@ -14,12 +14,18 @@ const app = (): UserConfigExport => {
         insertTypesEntry: true,
       }),
     ],
+    resolve: {
+      alias: {
+        "@": path.resolve(__dirname, "./src"),
+      },
+    },
     build: {
       lib: {
         entry: path.resolve(__dirname, "src/lib/index.ts"),
         name: "index",
         formats: ["es", "umd"],
       },
+      minify: "esbuild",
       rollupOptions: {
         external: ["react", "react/jsx-runtime", "react-dom", "tailwindcss"],
         output: {

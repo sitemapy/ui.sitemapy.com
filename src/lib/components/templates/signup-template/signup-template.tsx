@@ -24,11 +24,9 @@ type Props = {
   title: ReactNode;
   description: ReactNode;
   separatorText: ReactNode;
-  loginWithGoogleText: ReactNode;
+  googleButtonText: ReactNode;
   emailLabel: ReactNode;
-  emailError?: ReactNode | null;
   passwordLabel: ReactNode;
-  passwordError?: ReactNode | null;
   signupText: ReactNode;
   loginButtonText: ReactNode;
   acceptTermsText: ReactNode;
@@ -36,12 +34,8 @@ type Props = {
   invalidEmailText: string;
   invalidPasswordText: string;
   confirmPasswordNotMatchError: string;
-  confirmPasswordError?: ReactNode | null;
-  onSubmit: (params: {
-    email: string;
-    password: string;
-    confirmPassword: string;
-  }) => void;
+  onSubmit: (params: { email: string; password: string }) => void;
+  onGoogleButtonClick: () => void;
 };
 
 export const SignupTemplate: React.FC<Props> = (props) => {
@@ -92,7 +86,11 @@ export const SignupTemplate: React.FC<Props> = (props) => {
                   onSubmit={form.handleSubmit(handleSubmit)}
                 >
                   <div className="flex flex-col gap-4">
-                    <Button variant="outline" className="w-full">
+                    <Button
+                      onClick={props.onGoogleButtonClick}
+                      variant="outline"
+                      className="w-full"
+                    >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 24 24"
@@ -102,7 +100,7 @@ export const SignupTemplate: React.FC<Props> = (props) => {
                           fill="currentColor"
                         />
                       </svg>
-                      {props.loginWithGoogleText}
+                      {props.googleButtonText}
                     </Button>
                   </div>
                   <div className="after:border-border relative text-center text-sm after:absolute after:inset-0 after:top-1/2 after:z-0 after:flex after:items-center after:border-t">

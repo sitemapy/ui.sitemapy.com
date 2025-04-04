@@ -16,14 +16,15 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
   args: {
     onSubmit: () => {},
+    onGoogleButtonClick: () => {},
+    confirmPasswordLabel: "Confirm password",
     title: "Create an account",
     description: "Create an account with your email and password",
     separatorText: "Or continue with",
-    loginWithGoogleText: "Sign up with Google",
+    googleButtonText: "Sign up with Google",
     emailLabel: "Email",
     passwordLabel: "Password",
     loginButtonText: "Sign up",
-    confirmPasswordLabel: "Confirm password",
     invalidEmailText: "Invalid email",
     invalidPasswordText: "Invalid password",
     confirmPasswordNotMatchError: "Passwords must match",

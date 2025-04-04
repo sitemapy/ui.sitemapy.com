@@ -16,10 +16,11 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
   args: {
     onSubmit: () => {},
+    onGoogleButtonClick: () => {},
     title: "Welcome back",
     description: "Login with your Apple or Google account",
     separatorText: "Or continue with",
-    loginWithGoogleText: "Login with Google",
+    googleButtonText: "Login with Google",
     emailLabel: "Email",
     passwordLabel: "Password",
     forgotPasswordText: "Forgot your password?",

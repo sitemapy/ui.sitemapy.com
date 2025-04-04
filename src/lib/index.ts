@@ -45,3 +45,6 @@ export * from "@/lib/components/atoms/textarea/textarea";
 export * from "@/lib/components/atoms/toggle/toggle";
 export * from "@/lib/components/atoms/toggle-group/toggle-group";
 export * from "@/lib/components/atoms/tooltip/tooltip";
+
+export * from "@/lib/components/templates/signin-template/signin-template";
+export * from "@/lib/components/templates/signup-template/signup-template";

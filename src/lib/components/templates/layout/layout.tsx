@@ -49,7 +49,7 @@ type Props = {
   onLogout: () => void;
 };
 
-export const Layout = (props: Props) => {
+export function Layout(props: Props) {
   return (
     <SidebarProvider>
       <Sidebar collapsible="icon">
@@ -78,4 +78,4 @@ export const Layout = (props: Props) => {
       <SidebarInset>{props.children}</SidebarInset>
     </SidebarProvider>
   );
-};
+}

@@ -35,7 +35,7 @@ type Props = {
   onLogout: () => void;
 };
 
-export const SidebarUser = (props: Props) => {
+export function SidebarUser(props: Props) {
   const isMobile = useIsMobile();
 
   return (
@@ -99,4 +99,4 @@ export const SidebarUser = (props: Props) => {
       </SidebarMenuItem>
     </SidebarMenu>
   );
-};
+}

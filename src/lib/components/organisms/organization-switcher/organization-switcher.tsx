@@ -27,7 +27,7 @@ type Props = {
   onAddOrganization: () => void;
 };
 
-export const OrganizationSwitcher = (props: Props) => {
+export function OrganizationSwitcher(props: Props) {
   const isMobile = useIsMobile();
 
   if (!props.activeOrganization) {
@@ -94,4 +94,4 @@ export const OrganizationSwitcher = (props: Props) => {
       </SidebarMenuItem>
     </SidebarMenu>
   );
-};
+}

@@ -21,7 +21,7 @@ type Props = {
   items: Navigation[];
 };
 
-export const SidebarNav = ({ items }: Props) => {
+export function SidebarNav({ items }: Props) {
   return (
     <SidebarGroup>
       <SidebarGroupLabel>Platform</SidebarGroupLabel>
@@ -60,4 +60,4 @@ export const SidebarNav = ({ items }: Props) => {
       </SidebarMenu>
     </SidebarGroup>
   );
-};
+}

@@ -37,7 +37,6 @@ export * from "@/lib/components/atoms/sheet/sheet";
 export * from "@/lib/components/atoms/sidebar/sidebar";
 export * from "@/lib/components/atoms/skeleton/skeleton";
 export * from "@/lib/components/atoms/slider/slider";
-export * from "@/lib/components/atoms/toaster/toaster";
 export * from "@/lib/components/atoms/switch/switch";
 export * from "@/lib/components/atoms/table/table";
 export * from "@/lib/components/atoms/tabs/tabs";

@@ -23,7 +23,7 @@ type Props = {
   title: ReactNode;
   description: ReactNode;
   separatorText: ReactNode;
-  loginWithGoogleText: ReactNode;
+  googleButtonText: ReactNode;
   emailLabel: ReactNode;
   passwordLabel: ReactNode;
   forgotPasswordText: ReactNode;
@@ -33,6 +33,7 @@ type Props = {
   loginButtonText: ReactNode;
   acceptTermsText: ReactNode;
   onSubmit: (params: { email: string; password: string }) => void;
+  onGoogleButtonClick: () => void;
 };
 
 export const SigninTemplate: React.FC<Props> = (props) => {
@@ -74,7 +75,11 @@ export const SigninTemplate: React.FC<Props> = (props) => {
                 <form onSubmit={form.handleSubmit(handleSubmit)}>
                   <div className="grid gap-6">
                     <div className="flex flex-col gap-4">
-                      <Button variant="outline" className="w-full">
+                      <Button
+                        variant="outline"
+                        onClick={props.onGoogleButtonClick}
+                        className="w-full"
+                      >
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           viewBox="0 0 24 24"
@@ -84,7 +89,7 @@ export const SigninTemplate: React.FC<Props> = (props) => {
                             fill="currentColor"
                           />
                         </svg>
-                        {props.loginWithGoogleText}
+                        {props.googleButtonText}
                       </Button>
                     </div>
                     <div className="after:border-border relative text-center text-sm after:absolute after:inset-0 after:top-1/2 after:z-0 after:flex after:items-center after:border-t">

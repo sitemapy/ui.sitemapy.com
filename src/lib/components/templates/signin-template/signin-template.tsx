@@ -42,7 +42,7 @@ export const SigninTemplate: React.FC<Props> = (props) => {
     email: z.string().email({
       message: props.invalidEmailText,
     }),
-    password: z.string().min(8, {
+    password: z.string({
       message: props.invalidPasswordText,
     }),
   });

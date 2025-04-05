@@ -14,16 +14,12 @@ import {
   SidebarMenuItem,
 } from "@/lib/components/atoms/sidebar/sidebar";
 import { useIsMobile } from "@/hooks/use-mobile";
-
-type Organization = {
-  name: string;
-  plan: string;
-};
+import { OrganizationEntity } from "@sitemapy/interfaces";
 
 type Props = {
-  organizations: Organization[];
-  activeOrganization: Organization | null;
-  onSelectOrganization: (organization: Organization) => void;
+  organizations: OrganizationEntity[];
+  activeOrganization: OrganizationEntity | null;
+  onSelectOrganization: (organization: OrganizationEntity) => void;
   onAddOrganization: () => void;
 };
 
@@ -51,9 +47,7 @@ export function OrganizationSwitcher(props: Props) {
                 <span className="truncate font-semibold">
                   {props.activeOrganization.name}
                 </span>
-                <span className="truncate text-xs">
-                  {props.activeOrganization.plan}
-                </span>
+                <span className="truncate text-xs">Free</span>
               </div>
               <ChevronsUpDown className="ml-auto" />
             </DropdownMenuTrigger>

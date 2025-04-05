@@ -11,40 +11,21 @@ import {
 import { OrganizationSwitcher } from "@/lib/components/organisms/organization-switcher/organization-switcher";
 import { SidebarUser } from "@/lib/components/organisms/sidebar-user/sidebar-user";
 import { SidebarNav } from "@/lib/components/organisms/sidebar-nav/sidebar-nav";
-
-type Navigation = {
-  title: string;
-  url: string;
-  icon: React.ElementType;
-  items: NavigationItem[];
-};
-
-type NavigationItem = {
-  title: string;
-  url: string;
-};
-
-type Organization = {
-  name: string;
-  plan: string;
-};
+import { OrganizationEntity, UserEntity } from "@sitemapy/interfaces";
+import { Navigation } from "@/types";
 
 type Props = {
   children: React.ReactNode;
-  organizations: Organization[];
-  activeOrganization: Organization | null;
-  onSelectOrganization: (organization: Organization) => void;
+  organizations: OrganizationEntity[];
+  activeOrganization: OrganizationEntity | null;
+  onSelectOrganization: (organization: OrganizationEntity) => void;
   navigation: Navigation[][];
-  user: {
-    name: string;
-    email: string;
-    avatar: string;
-    navigation: {
-      title: string;
-      url: string;
-      icon: React.ElementType;
-    }[];
-  };
+  user: UserEntity;
+  userDropdownNavigation: {
+    url: string;
+    icon: React.ElementType;
+    title: string;
+  }[];
   onAddOrganization: () => void;
   onLogout: () => void;
 };
@@ -69,7 +50,7 @@ export function Layout(props: Props) {
         <SidebarFooter>
           <SidebarUser
             user={props.user}
-            navigation={props.user.navigation}
+            navigation={props.userDropdownNavigation}
             onLogout={props.onLogout}
           />
         </SidebarFooter>

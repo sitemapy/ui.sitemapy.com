@@ -5,6 +5,7 @@ import { BookOpen, Settings2 } from "lucide-react";
 import { Bot } from "lucide-react";
 import { SquareTerminal } from "lucide-react";
 import { Navigation } from "../../../../../types";
+import { OrganizationEntity, UserEntity } from "@sitemapy/interfaces";
 
 const meta = {
   title: "Templates/Layout",
@@ -15,40 +16,41 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-const organizations = [
+const organizations: OrganizationEntity[] = [
   {
     name: "Acme Inc",
-    plan: "Enterprise",
+    id: "1",
+    created_at: new Date(),
+    updated_at: new Date(),
   },
   {
     name: "Acme Corp.",
-    plan: "Startup",
+    id: "2",
+    created_at: new Date(),
+    updated_at: new Date(),
   },
   {
     name: "Evil Corp.",
-    plan: "Free",
+    id: "3",
+    created_at: new Date(),
+    updated_at: new Date(),
   },
 ];
 
-const user = {
-  name: "John Doe",
+const user: UserEntity = {
+  id: "1",
+  created_at: new Date(),
+  updated_at: new Date(),
   email: "john.doe@example.com",
-  avatar: "https://github.com/shadcn.png",
-  navigation: [
-    {
-      title: "Playground",
-      url: "#",
-      icon: SquareTerminal,
-    },
-  ],
+  password: "password",
+  language: "en",
 };
 
 const navMain: Navigation[] = [
   {
     title: "Playground",
-    url: "#",
     icon: SquareTerminal,
-    isActive: true,
+    active: true,
     items: [
       {
         title: "History",
@@ -66,7 +68,6 @@ const navMain: Navigation[] = [
   },
   {
     title: "Models",
-    url: "#",
     icon: Bot,
     items: [
       {
@@ -85,7 +86,6 @@ const navMain: Navigation[] = [
   },
   {
     title: "Documentation",
-    url: "#",
     icon: BookOpen,
     items: [
       {
@@ -108,7 +108,6 @@ const navMain: Navigation[] = [
   },
   {
     title: "Settings",
-    url: "#",
     icon: Settings2,
     items: [
       {
@@ -139,6 +138,13 @@ export const Default: Story = {
     onSelectOrganization: () => alert("Organization selected"),
     navigation: [navMain],
     user,
+    userDropdownNavigation: [
+      {
+        title: "Playground",
+        url: "#",
+        icon: SquareTerminal,
+      },
+    ],
     onAddOrganization: () => alert("Add organization"),
     onLogout: () => alert("Logout"),
   },

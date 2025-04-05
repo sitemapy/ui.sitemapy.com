@@ -1,7 +1,6 @@
 export type Navigation = {
   title: string;
-  url: string;
-  isActive?: boolean;
+  active?: boolean;
   icon: React.ElementType;
   items: NavigationItem[];
 };

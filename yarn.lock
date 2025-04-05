@@ -1295,6 +1295,11 @@
     argparse "~1.0.9"
     string-argv "~0.3.1"
 
+"@sitemapy/interfaces@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@sitemapy/interfaces/-/interfaces-1.0.0.tgz#0de4f9bd150126a44aa97302ad37f4f65e89f514"
+  integrity sha512-p7kjnL2mHSdfSUEuMLgcCa+xWaUG/7NNGYugRP1GADSKSy4R9yelLkD3E+TqSP4K0XpkcTwnH42xe6eaxrCOwQ==
+
 "@standard-schema/utils@^0.3.0":
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/@standard-schema/utils/-/utils-0.3.0.tgz#3d5e608f16c2390c10528e98e59aef6bf73cae7b"
@@ -2268,6 +2273,11 @@ better-opn@^3.0.2:
   integrity sha512-aVNobHnJqLiUelTaHat9DZ1qM2w0C0Eym4LPI/3JxOnSokGVdsl1T1kN7TFvsEAD8G47A6VKQ0TVHqbBnYMJlQ==
   dependencies:
     open "^8.0.4"
+
+boring-avatars@^1.11.2:
+  version "1.11.2"
+  resolved "https://registry.yarnpkg.com/boring-avatars/-/boring-avatars-1.11.2.tgz#365e0b765fb0065ca0cb2fd20c200674d0a9ded6"
+  integrity sha512-3+wkwPeObwS4R37FGXMYViqc4iTrIRj5yzfX9Qy4mnpZ26sX41dGMhsAgmKks1r/uufY1pl4vpgzMWHYfJRb2A==
 
 brace-expansion@^1.1.7:
   version "1.1.11"

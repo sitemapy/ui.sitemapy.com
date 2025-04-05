@@ -30,7 +30,7 @@ export function SidebarNav({ items }: Props) {
           <Collapsible
             key={item.title}
             asChild
-            defaultOpen={item.isActive}
+            defaultOpen={item.active}
             className="group/collapsible"
           >
             <SidebarMenuItem>

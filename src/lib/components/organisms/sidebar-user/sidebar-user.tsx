@@ -1,10 +1,6 @@
 import { ChevronsUpDown, LogOut } from "lucide-react";
 
-import {
-  Avatar,
-  AvatarFallback,
-  AvatarImage,
-} from "@/lib/components/atoms/avatar/avatar";
+import { Avatar } from "@/lib/components/atoms/avatar/avatar";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -14,19 +10,17 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/lib/components/atoms/dropdown-menu/dropdown-menu";
+import BoringAvatar from "boring-avatars";
 import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/lib/components/atoms/sidebar/sidebar";
 import { useIsMobile } from "@/hooks/use-mobile";
+import { UserEntity } from "@sitemapy/interfaces";
 
 type Props = {
-  user: {
-    name: string;
-    email: string;
-    avatar: string;
-  };
+  user: UserEntity;
   navigation: {
     title: string;
     url: string;
@@ -49,12 +43,22 @@ export function SidebarUser(props: Props) {
           >
             <DropdownMenuTrigger>
               <Avatar className="h-8 w-8 rounded-lg">
-                <AvatarImage src={props.user.avatar} alt={props.user.name} />
-                <AvatarFallback className="rounded-lg">CN</AvatarFallback>
+                <BoringAvatar
+                  size={32}
+                  name={props.user.email}
+                  variant="beam"
+                  colors={[
+                    "#fee2e2",
+                    "#fed7aa",
+                    "#d9f99d",
+                    "#a5f3fc",
+                    "#f5d0fe",
+                  ]}
+                />
               </Avatar>
               <div className="grid flex-1 text-left text-sm leading-tight">
                 <span className="truncate font-semibold">
-                  {props.user.name}
+                  {props.user.email}
                 </span>
                 <span className="truncate text-xs">{props.user.email}</span>
               </div>
@@ -70,12 +74,22 @@ export function SidebarUser(props: Props) {
             <DropdownMenuLabel className="p-0 font-normal">
               <div className="flex items-center gap-2 px-1 py-1.5 text-left text-sm">
                 <Avatar className="h-8 w-8 rounded-lg">
-                  <AvatarImage src={props.user.avatar} alt={props.user.name} />
-                  <AvatarFallback className="rounded-lg">CN</AvatarFallback>
+                  <BoringAvatar
+                    size={32}
+                    name={props.user.email}
+                    variant="beam"
+                    colors={[
+                      "#fee2e2",
+                      "#fed7aa",
+                      "#d9f99d",
+                      "#a5f3fc",
+                      "#f5d0fe",
+                    ]}
+                  />
                 </Avatar>
                 <div className="grid flex-1 text-left text-sm leading-tight">
                   <span className="truncate font-semibold">
-                    {props.user.name}
+                    {props.user.email}
                   </span>
                   <span className="truncate text-xs">{props.user.email}</span>
                 </div>

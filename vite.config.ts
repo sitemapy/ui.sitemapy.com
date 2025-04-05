@@ -25,7 +25,7 @@ const app = (): UserConfigExport => {
         name: "index",
         formats: ["es", "umd"],
       },
-      minify: false,
+      minify: "esbuild",
       rollupOptions: {
         external: ["react", "react/jsx-runtime", "react-dom", "tailwindcss"],
         output: {
